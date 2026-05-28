@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Not found — Kevin Pedeaux</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="page">
+
+    <header class="header">
+      <a class="name" href="/" aria-label="Kevin Pedeaux home">
+        <span class="name-mark" aria-hidden="true"></span>
+        Kevin Pedeaux
+      </a>
+    </header>
+
+    <section class="notfound">
+      <div class="code">404 / NOT FOUND</div>
+      <h1 class="hero-tagline">
+        <em>That page</em> doesn&rsquo;t exist &mdash; or not anymore.
+      </h1>
+      <p class="hero-sub" style="margin-top: var(--s-3);">
+        Try <a href="/" style="border-bottom: 1px solid var(--rule);">the homepage</a> or <a href="/links/" style="border-bottom: 1px solid var(--rule);">the links page</a>.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-row">
+        <div class="footer-meta">
+          <span>New Orleans, LA</span>
+          <span class="dot" aria-hidden="true"></span>
+          <a href="mailto:pedeaux@gmail.com">pedeaux@gmail.com</a>
+        </div>
+        <div>&copy; <span id="year">2026</span> Kevin Pedeaux</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
