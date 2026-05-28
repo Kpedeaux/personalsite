@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects
+# Old /links path now lives at /
+/links            /    301
+/links/           /    301
+/links/*          /    301
