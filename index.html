@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kevin Pedeaux</title>
-  <meta name="description" content="Kevin Pedeaux — builder and operator in New Orleans. CR Coffee Shop, St. Roch Market, CoreRail.">
+  <title>Kevin Pedeaux — Coffee Roaster &amp; Operator in New Orleans</title>
+  <meta name="description" content="Kevin Pedeaux is a New Orleans coffee roaster and operator — owner of CR Coffee Shop (Coast Roast Coffee) on Magazine Street, operator of the historic St. Roch Market, and builder of CoreRail.">
   <meta name="author" content="Kevin Pedeaux">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Kevin Pedeaux">
+  <meta property="og:title" content="Kevin Pedeaux — Coffee Roaster &amp; Operator in New Orleans">
   <meta property="og:description" content="I make coffee and the things that come with it.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kevinpedeaux.com/">
@@ -16,7 +16,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Kevin Pedeaux">
+  <meta name="twitter:title" content="Kevin Pedeaux — Coffee Roaster &amp; Operator in New Orleans">
   <meta name="twitter:description" content="I make coffee and the things that come with it.">
   <meta name="twitter:site" content="@Kpedeaux">
   <meta name="twitter:creator" content="@Kpedeaux">
@@ -48,23 +48,63 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Kevin Pedeaux",
-    "url": "https://kevinpedeaux.com/",
-    "jobTitle": "Operator and Builder",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "New Orleans",
-      "addressRegion": "LA",
-      "addressCountry": "US"
-    },
-    "sameAs": [
-      "https://crcoffeenola.com/",
-      "https://strochmarket.com/",
-      "https://creativecorerail.com/",
-      "https://www.youtube.com/coffeewithkevin",
-      "https://x.com/Kpedeaux",
-      "https://www.facebook.com/pedeaux"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://kevinpedeaux.com/#website",
+        "url": "https://kevinpedeaux.com/",
+        "name": "Kevin Pedeaux",
+        "publisher": { "@id": "https://kevinpedeaux.com/#person" }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://kevinpedeaux.com/#profilepage",
+        "url": "https://kevinpedeaux.com/",
+        "isPartOf": { "@id": "https://kevinpedeaux.com/#website" },
+        "mainEntity": { "@id": "https://kevinpedeaux.com/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://kevinpedeaux.com/#person",
+        "name": "Kevin Pedeaux",
+        "url": "https://kevinpedeaux.com/",
+        "jobTitle": "Coffee Roaster & Operator",
+        "description": "New Orleans coffee roaster and operator — owner of CR Coffee Shop (Coast Roast Coffee), operator of the historic St. Roch Market, builder of CoreRail, and host of Coffee with Kevin.",
+        "email": "mailto:pedeaux@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New Orleans",
+          "addressRegion": "LA",
+          "addressCountry": "US"
+        },
+        "knowsAbout": [
+          "Coffee roasting",
+          "Specialty coffee",
+          "Food halls",
+          "Hospitality operations",
+          "New Orleans"
+        ],
+        "worksFor": [
+          { "@type": "Organization", "name": "CR Coffee Shop", "url": "https://crcoffeenola.com/" },
+          { "@type": "Organization", "name": "St. Roch Market", "url": "https://strochmarket.com/" },
+          { "@type": "Organization", "name": "CoreRail", "url": "https://creativecorerail.com/" }
+        ],
+        "subjectOf": [
+          "https://www.wsj.com/business/hospitality/coffee-prices-inflation-tariffs-brazil-e3c26e3b",
+          "https://www.southernfoodways.org/interview/kevin-pedeaux/",
+          "https://www.wwltv.com/article/news/investigations/mike-perlstein/what-a-privilege-original-vendor-takes-the-reins-at-st-roch-market/289-c80db175-2084-4ccd-b1cc-990ba4696f7c",
+          "https://prcno.org/im-a-preservationist-an-interview-with-kevin-pedeaux/"
+        ],
+        "sameAs": [
+          "https://crcoffeenola.com/",
+          "https://strochmarket.com/",
+          "https://creativecorerail.com/",
+          "https://www.youtube.com/coffeewithkevin",
+          "https://x.com/Kpedeaux",
+          "https://www.instagram.com/kpedeaux/",
+          "https://www.facebook.com/pedeaux"
+        ]
+      }
     ]
   }
   </script>
@@ -90,6 +130,18 @@
       <h1 id="tagline" class="hero-tagline">
         I make <em>coffee</em> and the things that come with it.
       </h1>
+      <p class="hero-sub">
+        I&rsquo;m Kevin Pedeaux &mdash; coffee roaster and operator in New Orleans.
+        I started Coast Roast Coffee in 2009 selling fresh-roasted beans at local
+        markets, then opened CR Coffee Shop on Magazine Street. I was one of the
+        original vendors at St. Roch Market, the city&rsquo;s historic food hall
+        &mdash; today I run it. I also build CoreRail, software for food halls and
+        coffee shops, and host Coffee with Kevin, an interview series on YouTube.
+      </p>
+      <p class="hero-sub">
+        My work has been covered by The Wall Street Journal, WWL-TV, Biz New
+        Orleans, and the Southern Foodways Alliance.
+      </p>
     </section>
 
     <!-- ====================================================================

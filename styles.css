@@ -157,6 +157,10 @@ body::before {
   max-width: 52ch;
 }
 
+.hero-sub + .hero-sub {
+  margin-top: var(--s-2);
+}
+
 /* ── SECTION HEADINGS ───────────────────────────────────────────────────── */
 .section {
   margin-bottom: var(--s-6);
