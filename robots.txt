@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /connect
+Disallow: /connect.html
 
 Sitemap: https://kevinpedeaux.com/sitemap.xml

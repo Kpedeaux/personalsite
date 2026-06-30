@@ -6,6 +6,12 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://*.google-analytics.com https://*.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 
+/connect
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/connect.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
 /styles.css
   Cache-Control: public, max-age=86400, must-revalidate
 

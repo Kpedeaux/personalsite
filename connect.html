@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save my contact — Kevin Pedeaux</title>
+
+  <!-- Keep this page out of search engines and AI crawlers -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  <!-- No social preview metadata on purpose: this page is unlisted. -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    /* connect-page specifics */
+    .card-btn {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: var(--s-3);
+      width: 100%;
+      text-align: left;
+      padding: var(--s-3);
+      background: var(--cream-2);
+      border: 1px solid var(--rule);
+      transition: padding-left 200ms var(--ease-out), border-color 200ms var(--ease-out);
+    }
+    .card-btn:hover,
+    .card-btn:focus-visible {
+      outline: none;
+      padding-left: calc(var(--s-3) + var(--s-1));
+      border-color: var(--accent);
+    }
+    .card-btn:hover .link-title,
+    .card-btn:focus-visible .link-title { color: var(--accent); }
+    .card-btn:hover .link-arrow,
+    .card-btn:focus-visible .link-arrow { color: var(--accent); transform: translateX(4px); }
+
+    .contact-meta {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--ink-2);
+      line-height: 1.7;
+      margin-top: var(--s-2);
+    }
+    .contact-meta strong { color: var(--ink); font-weight: 600; }
+
+    .saved-note {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-3);
+      margin-top: var(--s-3);
+      min-height: 1.5em;
+    }
+    .saved-note.is-done { color: var(--accent); }
+
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--s-2);
+      text-align: center;
+    }
+    .qr-frame {
+      width: 200px;
+      max-width: 60vw;
+      padding: var(--s-2);
+      background: var(--cream-2);
+      border: 1px solid var(--rule);
+    }
+    .qr-frame img { width: 100%; height: auto; }
+    .qr-caption {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-2);
+      line-height: 1.5;
+      max-width: 36ch;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="page">
+
+    <header class="header">
+      <a class="name" href="/" aria-label="Kevin Pedeaux home">
+        <span class="name-mark" aria-hidden="true"></span>
+        Kevin Pedeaux
+      </a>
+    </header>
+
+    <section class="hero">
+      <h1 class="hero-tagline">Let&rsquo;s stay in <em>touch</em>.</h1>
+      <p class="hero-sub">
+        Tap below to save my contact to your phone.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-label">
+        <span>Save my contact</span>
+        <span class="section-label-count">vCard</span>
+      </div>
+
+      <button class="card-btn" id="save-btn" type="button">
+        <div class="link-body">
+          <span class="link-title">Add Kevin Pedeaux to contacts</span>
+          <span class="link-desc">Downloads a contact card (.vcf)</span>
+        </div>
+        <span class="link-arrow" aria-hidden="true">&darr;</span>
+      </button>
+
+      <p class="saved-note" id="saved-note" role="status" aria-live="polite"></p>
+
+      <div class="contact-meta">
+        <strong>Kevin Pedeaux</strong><br>
+        Coffee Roaster &amp; Operator<br>
+        CR Coffee Shops / St. Roch Market<br>
+        New Orleans, LA
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">
+        <span>Or scan</span>
+        <span class="section-label-count">QR</span>
+      </div>
+
+      <div class="qr-block">
+        <div class="qr-frame">
+          <img src="/connect-qr.svg" alt="QR code to kevinpedeaux.com/connect" width="200" height="200">
+        </div>
+        <p class="qr-caption">
+          Point a phone camera here to open this page &mdash; no typing.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-row">
+        <div class="footer-meta">
+          <span>New Orleans, LA</span>
+          <span class="dot" aria-hidden="true"></span>
+          <a href="/">kevinpedeaux.com</a>
+        </div>
+        <div>&copy; <span id="year">2026</span> Kevin Pedeaux</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // The contact card is stored Base64-encoded so the phone number never
+    // appears as plain text in the page source (keeps it off scrapers).
+    var VCARD_B64 = "QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpOOlBlZGVhdXg7S2V2aW47OzsNCkZOOktldmluIFBlZGVhdXgNCk9SRzpDUiBDb2ZmZWUgU2hvcHMgLyBTdC4gUm9jaCBNYXJrZXQNClRJVExFOkNvZmZlZSBSb2FzdGVyICYgT3BlcmF0b3INClRFTDtUWVBFPUNFTEwsVk9JQ0U6KzE1MDQzODg2NDE4DQpFTUFJTDtUWVBFPUlOVEVSTkVUOnBlZGVhdXhAZ21haWwuY29tDQpVUkw6aHR0cHM6Ly9rZXZpbnBlZGVhdXguY29tDQpVUkw6aHR0cHM6Ly9jcmNvZmZlZW5vbGEuY29tDQpVUkw6aHR0cHM6Ly9zdHJvY2htYXJrZXQuY29tDQpBRFI7VFlQRT1XT1JLOjs7O05ldyBPcmxlYW5zO0xBOztVU0ENCk5PVEU6SSBtYWtlIGNvZmZlZSBhbmQgdGhlIHRoaW5ncyB0aGF0IGNvbWUgd2l0aCBpdC4NCkVORDpWQ0FSRA0K";
+
+    document.getElementById('save-btn').addEventListener('click', function () {
+      var note = document.getElementById('saved-note');
+      try {
+        var bytes = atob(VCARD_B64);
+        var blob = new Blob([bytes], { type: 'text/vcard;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'Kevin-Pedeaux.vcf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+        note.textContent = 'Contact downloaded — open it to add Kevin to your phone.';
+        note.classList.add('is-done');
+      } catch (e) {
+        note.textContent = 'Something went wrong. Email pedeaux@gmail.com and I’ll send it.';
+      }
+    });
+  </script>
+
+</body>
+</html>
