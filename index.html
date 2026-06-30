@@ -27,10 +27,9 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://kevinpedeaux.com/">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in styles.css) -->
+  <link rel="preload" href="/fonts/jetbrains-mono-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
@@ -70,7 +69,6 @@
         "url": "https://kevinpedeaux.com/",
         "jobTitle": "Coffee Roaster & Operator",
         "description": "New Orleans coffee roaster and operator. Owner of CR Coffee Shop (Coast Roast Coffee), operator of the historic St. Roch Market, builder of CoreRail, and host of Coffee with Kevin.",
-        "email": "mailto:pedeaux@gmail.com",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "New Orleans",
@@ -270,10 +268,10 @@
           <span class="link-arrow" aria-hidden="true">&rarr;</span>
         </a>
 
-        <a class="link" href="mailto:pedeaux@gmail.com">
+        <a class="link" data-email href="#">
           <div class="link-body">
             <span class="link-title">Email</span>
-            <span class="link-desc">pedeaux@gmail.com</span>
+            <span class="link-desc" data-email-text></span>
           </div>
           <span class="link-arrow" aria-hidden="true">&rarr;</span>
         </a>
@@ -289,7 +287,7 @@
         <div class="footer-meta">
           <span>New Orleans, LA</span>
           <span class="dot" aria-hidden="true"></span>
-          <a href="mailto:pedeaux@gmail.com">pedeaux@gmail.com</a>
+          <a data-email data-email-text href="#">Email</a>
         </div>
         <div>&copy; <span id="year">2026</span> Kevin Pedeaux</div>
       </div>
@@ -299,6 +297,17 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Email assembled at runtime — kept out of the HTML source to deter scrapers.
+    (function () {
+      var e = atob('cGVkZWF1eEBnbWFpbC5jb20=');
+      document.querySelectorAll('[data-email]').forEach(function (el) {
+        el.setAttribute('href', 'mailto:' + e);
+      });
+      document.querySelectorAll('[data-email-text]').forEach(function (el) {
+        el.textContent = e;
+      });
+    })();
   </script>
 
 </body>
