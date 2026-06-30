@@ -47,15 +47,6 @@
     .card-btn:hover .link-arrow,
     .card-btn:focus-visible .link-arrow { color: var(--accent); transform: translateX(4px); }
 
-    .contact-meta {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--ink-2);
-      line-height: 1.7;
-      margin-top: var(--s-2);
-    }
-    .contact-meta strong { color: var(--ink); font-weight: 600; }
-
     .saved-note {
       font-family: var(--font-mono);
       font-size: 12px;
@@ -80,13 +71,6 @@
       border: 1px solid var(--rule);
     }
     .qr-frame img { width: 100%; height: auto; }
-    .qr-caption {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--ink-2);
-      line-height: 1.5;
-      max-width: 36ch;
-    }
   </style>
 </head>
 <body>
@@ -122,28 +106,17 @@
       </button>
 
       <p class="saved-note" id="saved-note" role="status" aria-live="polite"></p>
-
-      <div class="contact-meta">
-        <strong>Kevin Pedeaux</strong><br>
-        Coffee Roaster &amp; Operator<br>
-        CR Coffee Shops / St. Roch Market<br>
-        New Orleans, LA
-      </div>
     </section>
 
     <section class="section">
       <div class="section-label">
         <span>Or scan</span>
-        <span class="section-label-count">QR</span>
       </div>
 
       <div class="qr-block">
         <div class="qr-frame">
           <img src="/connect-qr.svg" alt="QR code to kevinpedeaux.com/connect" width="200" height="200">
         </div>
-        <p class="qr-caption">
-          Point a phone camera here to open this page &mdash; no typing.
-        </p>
       </div>
     </section>
 
@@ -165,7 +138,7 @@
 
     // The contact card is stored Base64-encoded so the phone number never
     // appears as plain text in the page source (keeps it off scrapers).
-    var VCARD_B64 = "QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpOOlBlZGVhdXg7S2V2aW47OzsNCkZOOktldmluIFBlZGVhdXgNCk9SRzpDUiBDb2ZmZWUgU2hvcHMgLyBTdC4gUm9jaCBNYXJrZXQNClRJVExFOkNvZmZlZSBSb2FzdGVyICYgT3BlcmF0b3INClRFTDtUWVBFPUNFTEwsVk9JQ0U6KzE1MDQzODg2NDE4DQpFTUFJTDtUWVBFPUlOVEVSTkVUOnBlZGVhdXhAZ21haWwuY29tDQpVUkw6aHR0cHM6Ly9rZXZpbnBlZGVhdXguY29tDQpVUkw6aHR0cHM6Ly9jcmNvZmZlZW5vbGEuY29tDQpVUkw6aHR0cHM6Ly9zdHJvY2htYXJrZXQuY29tDQpBRFI7VFlQRT1XT1JLOjs7O05ldyBPcmxlYW5zO0xBOztVU0ENCk5PVEU6SSBtYWtlIGNvZmZlZSBhbmQgdGhlIHRoaW5ncyB0aGF0IGNvbWUgd2l0aCBpdC4NCkVORDpWQ0FSRA0K";
+    var VCARD_B64 = "QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpOOlBlZGVhdXg7S2V2aW47OzsNCkZOOktldmluIFBlZGVhdXgNCk9SRzpDUiBDb2ZmZWUgU2hvcHMgLyBTdC4gUm9jaCBNYXJrZXQNClRFTDtUWVBFPUNFTEwsVk9JQ0U6KzE1MDQzODg2NDE4DQpFTUFJTDtUWVBFPUlOVEVSTkVUOnBlZGVhdXhAZ21haWwuY29tDQpVUkw6aHR0cHM6Ly9rZXZpbnBlZGVhdXguY29tDQpVUkw6aHR0cHM6Ly9jcmNvZmZlZW5vbGEuY29tDQpVUkw6aHR0cHM6Ly9zdHJvY2htYXJrZXQuY29tDQpBRFI7VFlQRT1XT1JLOjs7O05ldyBPcmxlYW5zO0xBOztVU0ENCk5PVEU6SSBtYWtlIGNvZmZlZSBhbmQgdGhlIHRoaW5ncyB0aGF0IGNvbWUgd2l0aCBpdC4NCkVORDpWQ0FSRA0K";
 
     document.getElementById('save-btn').addEventListener('click', function () {
       var note = document.getElementById('saved-note');
