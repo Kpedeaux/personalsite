@@ -1,8 +1,12 @@
 .DS_Store
 Thumbs.db
+desktop.ini
 .vscode/
 .idea/
 *.log
 node_modules/
 .env
 .env.local
+
+# Original full-res source photo (10.9 MB) — only the optimized kevin-hero.jpg ships
+Kevinheadshot.jpg
