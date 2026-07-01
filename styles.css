@@ -189,15 +189,84 @@ body::before {
   margin-bottom: var(--s-6);
 }
 
-.hero-photo {
+/* ── HOME: full-bleed hero ──────────────────────────────────────────────── */
+body.home { padding-top: 0; }
+
+.hero-full {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-bottom: var(--s-4);
+}
+
+/* Scrim at the top so the overlaid name reads — weighted to the top-left
+   (under the name) with a lighter overall wash so the sky/sign stay bright. */
+.hero-full::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background:
+    radial-gradient(150% 110% at 0% 0%, rgba(14, 15, 13, 0.62) 0%, rgba(14, 15, 13, 0) 55%),
+    linear-gradient(to bottom, rgba(14, 15, 13, 0.26), rgba(14, 15, 13, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-full-img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1040 / 1326;
-  object-fit: cover;
-  border: 1px solid var(--rule);
-  border-radius: 2px;
-  margin-bottom: var(--s-4);
+  /* Dissolve the lower part of the photo into the cream page. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 56%, rgba(0,0,0,0) 96%);
+          mask-image: linear-gradient(to bottom, #000 56%, rgba(0,0,0,0) 96%);
+}
+
+.hero-full-name {
+  position: absolute;
+  z-index: 2;
+  top: var(--s-4);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--max-w);
+  padding: 0 var(--s-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: clamp(20px, 2.4vw, 22px);
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  text-shadow: 0 1px 2px rgba(14, 15, 13, 0.6), 0 1px 18px rgba(14, 15, 13, 0.4);
+}
+
+.hero-full-copy {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: -24vw auto 0;      /* pull the tagline up over the fading legs */
+  padding: 0 var(--s-3);
+}
+
+.hero-full-copy .hero-tagline {
+  margin-top: 0;
+}
+
+/* On larger screens, keep the hero a contained column instead of a giant. */
+@media (min-width: 640px) {
+  .hero-full {
+    left: auto;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-full-copy { margin-top: -150px; }
 }
 
 .hero-tagline {
