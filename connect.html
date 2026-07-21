@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Save my contact — Kevin Pedeaux</title>
+  <title>Save my contact: Kevin Pedeaux</title>
 
   <!-- Keep this page out of search engines and AI crawlers -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
@@ -16,10 +16,10 @@
 
   <!-- Fonts (self-hosted — see @font-face in styles.css) -->
   <link rel="preload" href="/fonts/jetbrains-mono-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css?v=2">
+  <link rel="stylesheet" href="/styles.css?v=3">
 
   <style>
     /* connect-page specifics */
@@ -95,7 +95,7 @@
     <section class="hero">
       <img class="connect-avatar" src="/kevin-avatar.jpg" width="512" height="512"
            alt="Kevin Pedeaux" fetchpriority="high">
-      <h1 class="hero-tagline">Let&rsquo;s stay in <em>touch</em>.</h1>
+      <h1 class="hero-tagline">Let&rsquo;s stay in touch.</h1>
       <p class="hero-sub">
         Tap below to save my contact to your phone.
       </p>
@@ -104,7 +104,6 @@
     <section class="section">
       <div class="section-label">
         <span>Save my contact</span>
-        <span class="section-label-count">vCard</span>
       </div>
 
       <button class="card-btn" id="save-btn" type="button">
@@ -163,10 +162,10 @@
         a.click();
         document.body.removeChild(a);
         setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
-        note.textContent = 'Contact downloaded — open it to add Kevin to your phone.';
+        note.textContent = 'Contact downloaded. Open it to add Kevin to your phone.';
         note.classList.add('is-done');
       } catch (e) {
-        note.textContent = 'Something went wrong — email ' + atob('cGVkZWF1eEBnbWFpbC5jb20=') + ' and I’ll send it.';
+        note.textContent = 'Something went wrong. Email ' + atob('cGVkZWF1eEBnbWFpbC5jb20=') + ' and I’ll send it.';
       }
     });
   </script>
