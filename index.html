@@ -37,7 +37,7 @@
   <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css?v=3">
+  <link rel="stylesheet" href="/styles.css?v=4">
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HQKWKEVY3"></script>
@@ -132,6 +132,56 @@
       </h1>
     </div>
   </div>
+
+  <!-- Rotating tagline — picks one line per visit, never the same one twice
+       in a row. Edit the list below to add or remove lines. The h1 above is
+       the no-JS fallback and what search engines index. Runs inline, before
+       first paint, so visitors never see the fallback flash. -->
+  <script>
+    (function () {
+      var lines = [
+        'I make coffee and the things that come with it.',
+        'I build experiences across tech, food, and community.',
+        'Coffee, and every darn thing that comes with it.',
+        'Everything here started with a bag of coffee.',
+        'I roast coffee. The rest followed.',
+        'Coffee is the front door. Everything else is behind it.',
+        'I run a coffee company, a market, and a software project I probably shouldn’t have started.',
+        'Roaster. Operator. Reluctant developer.',
+        'Sixteen years of coffee, and a few things that grew out of it.',
+        'I make coffee and the systems that keep it moving.',
+        'New Orleans coffee, and the businesses built around it.',
+        'I take on the things nobody else wants to run.',
+        'I make coffee. Somehow that turned into a food hall.',
+        'Coffee roaster. Landlord, apparently.',
+        'I keep saying yes to buildings.',
+        'Sixteen years in coffee and I still can’t explain what I do all day.',
+        'I roast coffee, run a market, and write code I’d rather not show anyone.',
+        'Started with one roaster. It escalated.',
+        'Professionally: coffee. Practically: whatever’s broken that morning.',
+        'I make coffee and the things that come with it, the list got long.',
+        'New Orleans coffee guy with a growing footprint of unrelated problems.',
+        'The coffee part is going fine.',
+        'I own a coffee company and a building that owns me.',
+        'Roasting coffee since 2009. Fixing the ice machine since 2023.',
+        'I make coffee. The rest is upkeep.',
+        'Coffee roaster, market operator, part-time electrician.',
+        'I got into coffee so I wouldn’t have a boss. Now I have thirty.',
+        'Still mostly coffee, but other problems.',
+        'Coffee first. Then a market, a bar, and a software problem.',
+        'Everything on this page started as a smaller idea.',
+        'Ask me about coffee. Don’t ask me about the plumbing.'
+      ];
+      if (lines.length < 2) return;
+      var last = -1;
+      try { last = parseInt(localStorage.getItem('tagline-last'), 10); } catch (e) {}
+      if (isNaN(last)) last = -1;
+      var idx = Math.floor(Math.random() * lines.length);
+      if (idx === last) idx = (idx + 1) % lines.length;
+      try { localStorage.setItem('tagline-last', String(idx)); } catch (e) {}
+      document.getElementById('tagline').textContent = lines[idx];
+    })();
+  </script>
 
   <main class="page">
 
