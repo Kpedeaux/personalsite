@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy | Kevin Pedeaux</title>
+  <meta name="description" content="What kevinpedeaux.com collects (very little) and how to reach me about it.">
+  <meta name="author" content="Kevin Pedeaux">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://kevinpedeaux.com/privacy">
+
+  <!-- Fonts (self-hosted — see @font-face in styles.css) -->
+  <link rel="preload" href="/fonts/jetbrains-mono-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css?v=4">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HQKWKEVY3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3HQKWKEVY3');
+  </script>
+
+  <style>
+    .legal h1 {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--ink);
+      margin-bottom: var(--s-1);
+    }
+    .legal-updated {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-3);
+      margin-bottom: var(--s-4);
+    }
+    .legal h2 {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--ink);
+      margin: var(--s-4) 0 var(--s-1);
+    }
+    .legal p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-2);
+      margin-bottom: var(--s-2);
+    }
+    .legal a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .back-home {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--ink);
+      margin-bottom: var(--s-4);
+      text-decoration: none;
+    }
+    .back-home:hover, .back-home:focus-visible { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <main class="page legal">
+    <a href="/" class="back-home">&larr; kevinpedeaux.com</a>
+
+    <h1>Privacy</h1>
+    <p class="legal-updated">Last updated July 31, 2026</p>
+
+    <p>This is my personal site. It collects almost nothing, and here is the whole story.</p>
+
+    <h2>Analytics</h2>
+    <p>I use Google Analytics to see which pages get read and roughly where visitors come from. It sets cookies that start with _ga. It never shows me your name or exact location. You can block it in your browser or with Google's opt-out tool at <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">tools.google.com/dlpage/gaoptout</a> and the site works fine.</p>
+
+    <h2>Local storage</h2>
+    <p>The homepage stores one number on your device so the rotating tagline does not repeat itself. It never leaves your browser.</p>
+
+    <h2>Nothing else</h2>
+    <p>No forms, no accounts, no ad tracking, no third-party fonts. If you email me, I use your address to reply and nothing more. Some browsers send Do Not Track or Global Privacy Control signals; the site does not change what it collects when it sees them, because this page already describes everything it collects.</p>
+
+    <h2>Questions</h2>
+    <p>Email <a href="mailto:pedeaux@gmail.com">pedeaux@gmail.com</a> and I will tell you what I have (probably nothing), or delete it.</p>
+
+    <footer class="footer">
+      <div class="footer-row">
+        <div class="footer-meta">
+          <span>New Orleans, LA</span>
+        </div>
+        <div>&copy; <span id="year">2026</span> Kevin Pedeaux</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

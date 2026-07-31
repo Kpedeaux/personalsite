@@ -67,7 +67,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   /* Color */
   --ink:       #0E0F0D;
   --ink-2:     #5A5751;
-  --ink-3:     #8A867D;
+  --ink-3:     #6E6A61;
   --cream:     #F5F1E8;
   --cream-2:   #EDE7D8;
   --rule:      #D9D3C5;
@@ -316,8 +316,12 @@ body.home { padding-top: 0; }
 
 .link:hover,
 .link:focus-visible {
-  outline: none;
   padding-left: var(--s-2);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .link:hover .link-title,
